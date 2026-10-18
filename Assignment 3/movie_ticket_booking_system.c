@@ -61,13 +61,22 @@ void printdetail(char name[50],int cat_choice , int total_tickets,float sb,float
 }
 int main(){
     struct Customer c ;
-    scanf("%49s",c.name);
-    scanf("%d",&c.total_tickets);
+    if(scanf("%49s",c.name)!=1){
+        printf("Invalid inpugct");
+        return 1;
+    }
+    if(scanf("%d",&c.total_tickets)!=1){
+        printf("Invalid input");
+        return 1;
+    }
     if(c.total_tickets<1 || c.total_tickets>20){
         printf("Invalid Ticket count.Ticekts must be between 1 to 20.\n");
         return 1;
     }
-    scanf("%d",&c.cat_choice);
+    if(scanf("%d",&c.cat_choice)!=1){
+         printf("Invalid input");
+        return 1;
+    }
     if(c.cat_choice<1 || c.cat_choice>3){
         printf("Invalid category.Category choice should be 1,2 or 3 only.\n");
         return 1;
