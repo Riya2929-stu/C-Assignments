@@ -230,8 +230,8 @@ void displayPlayersByTeam(Team teamList[], int teamCount, const char *teamName) 
     printf("\nPlayers of Team %s:\n\n", teamList[teamIndex].teamname);
 
     printf("================================================================================\n");
-    printf("%-5s %-22s %-15s %-8s %-8s %-8s %-7s %-7s %-12s\n","ID", "Name", "Role", "Runs", "Avg", "SR", "Wkts", "ER", "Perf. Index");
-
+    printf("%-5s %-22s %-15s %-8s %-8s %-8s %-7s %-7s %-12s\n","ID", "Name", "Role", "Runs", "Avg", "SR", "Wkts", "ER", "Perf. Index");  
+    // taking help from ai to write this format as shown in sample output in assignment
     printf("================================================================================\n");
 
     while (current != NULL) {
@@ -354,7 +354,6 @@ void displayTopKPlayers(Team teamList[], int teamCount,const char *teamName, con
         printf("%-5d %-22s %-12.2f %-12.2f\n",matchingPlayers[i]->playerId,matchingPlayers[i]->name,
         matchingPlayers[i]->performanceIndex,matchingPlayers[i]->strikeRate);
     }
-
     printf("===============================================================\n");
     free(matchingPlayers);
 }
@@ -614,7 +613,6 @@ int main() {
         printf("4. Display Top K Players of a Specific Team by Role\n\n");
         printf("5. Display all Players of Specific Role Across All Teams by Performance Index\n\n");
         printf("6. Exit\n\n");
-
         printf("================================================================================\n");
         printf("Enter your choice: ");
 
@@ -674,7 +672,6 @@ int main() {
                 int k;
 
                 getchar();
-
                 printf("Enter Team Name: ");
                 fgets(teamName, sizeof(teamName), stdin);
                 teamName[strcspn(teamName, "\n")] = '\0';
@@ -694,9 +691,7 @@ int main() {
             }
             case 5: {
                 char role[30];
-
                 getchar();
-
                 printf("Enter Role: ");
                 fgets(role, sizeof(role), stdin);
                 role[strcspn(role, "\n")] = '\0';
